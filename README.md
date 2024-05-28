@@ -19,5 +19,6 @@ This repository is your go-to resource for mastering the fundamentals and advanc
 To get started, simply clone this repository and explore the contents. Dive into the tutorials, experiment with the code examples, and embark on the projects to apply what you've learned.
 
 ```bash
-git clone https://github.com/your-username/learn-data-engineering.git
+git clone https://github.com/deathm1/learn-data-engineering.git
 cd learn-data-engineering
+```
