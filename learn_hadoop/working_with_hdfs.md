@@ -1,10 +1,9 @@
 # Hadoop Installation Guide
 
 - For Windows: [Link](https://kontext.tech/article/829/install-hadoop-331-on-windows-10-step-by-step-guide)
-
 - For Linux: [Link](https://medium.com/@connectmeinarjun/step-by-step-guide-to-setting-up-hadoop-on-ubuntu-installation-and-configuration-walkthrough-60e493e9370d)
-
-- VirtualBox [Direct download](https://downloads.cloudera.com/demo_vm/virtualbox/cloudera-quickstart-vm-5.13.0-0-virtualbox.zip)
+- Virtual Box 1 [Direct download](https://downloads.cloudera.com/demo_vm/virtualbox/cloudera-quickstart-vm-5.13.0-0-virtualbox.zip)
+- Virtual Box 2 [Direct Download](https://archive.cloudera.com/hwx-sandbox/hdp/hdp-2.6.5/HDP_2.6.5_virtualbox_180626.ova)
 
 # File Sources
 
@@ -24,9 +23,7 @@
 
 ### Listing Root Directory
 
-| Windows           | Linux            |
-| ----------------- | ---------------- |
-| `hadoop fs -ls /` | `hadoop fs -ls /` |
+`hadoop fs -ls /`
 
 ### Listing Default to Home Directory
 
