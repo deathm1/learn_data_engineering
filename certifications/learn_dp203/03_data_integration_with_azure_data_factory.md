@@ -1,2 +1,1 @@
-# Understand Azure Data Factory 
-
+# Understand Azure Data Factory
