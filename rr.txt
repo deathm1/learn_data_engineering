@@ -1,0 +1,4 @@
+sudo kmodsign MOK:Windows8@1 /lib/modules/$(uname -r)/updates/dkms/vboxdrv.ko
+sudo kmodsign MOK:Windows8@1 /lib/modules/$(uname -r)/updates/dkms/vboxnetflt.ko
+sudo kmodsign MOK:Windows8@1 /lib/modules/$(uname -r)/updates/dkms/vboxnetadp.ko
+sudo kmodsign MOK:Windows8@1 /lib/modules/$(uname -r)/updates/dkms/vboxpci.ko
