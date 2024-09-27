@@ -208,8 +208,7 @@ CREATE TABLE Enrollment (
 );
 ```
 
-
-
 Key Details:
+
 - Total Participation (Student): The StudentID in the Enrollment table is NOT NULL, meaning a student must be enrolled in a course. This enforces the total participation constraint.
 - Partial Participation (Course): The CourseID allows NULL, meaning a course can exist even if no students are enrolled in it (partial participation).
