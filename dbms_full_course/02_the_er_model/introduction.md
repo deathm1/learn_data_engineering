@@ -143,6 +143,17 @@ Using Sets, it can be represented as:
 
 ![alt text](image-15.png)
 
+```
+CREATE TABLE users (
+    user_id INT PRIMARY KEY,
+    username VARCHAR(50));
+CREATE TABLE user_profiles (
+    profile_id INT PRIMARY KEY,
+    user_id INT UNIQUE,
+    profile_data VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(user_id));
+```
+
 #### One-to-Many
 
 In one-to-many mapping as well where each entity can be related to more than one entity and the total number of tables that can be used in this is 2. Let us assume that one surgeon department can accommodate many doctors. So the Cardinality will be 1 to M. It means one department has many Doctors.
@@ -152,6 +163,17 @@ In one-to-many mapping as well where each entity can be related to more than one
 Using sets, one-to-many cardinality can be represented as:
 
 ![alt text](image-17.png)
+
+```
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50));
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments(department_id));
+```
 
 #### Many-to-One
 
@@ -163,6 +185,20 @@ Using Sets, it can be represented as:
 
 ![alt text](image-19.png)
 
+```
+CREATE TABLE Teachers (
+    teacher_id INT PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255)
+);
+CREATE TABLE Courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(255),
+    teacher_id INT,
+    FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
+);
+```
+
 #### Many-to-Many
 
 When entities in all entity sets can take part more than once in the relationship cardinality is many to many. Let us assume that a student can take more than one course and one course can be taken by many students. So the relationship will be many to many.
@@ -171,6 +207,21 @@ When entities in all entity sets can take part more than once in the relationshi
 Using Sets, it can be represented as:
 
 ![alt text](image-21.png)
+
+```
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50));
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(50));
+CREATE TABLE student_courses (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id));
+```
 
 # Participation Constraint
 
