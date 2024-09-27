@@ -4,7 +4,11 @@ There are several types of DBMS Architecture that we use according to the usage 
 
 ## 1-Tier Architecture
 
-In 1-Tier Architecture the database is directly available to the user, the user can directly sit on the DBMS and use it that is, the client, server, and Database are all present on the same machine. For Example: to learn SQL we set up an SQL server and the database on the local system. This enables us to directly interact with the relational database and execute operations. The industry won’t use this architecture they logically go for 2-tier and 3-tier Architecture.
+- **1-Tier Architecture**: Database is directly accessible to the user.
+- **Components**: Client, server, and database reside on the same machine.
+- **Use Case**: Commonly used for learning SQL (e.g., setting up a local SQL server).
+- **Interaction**: Allows direct interaction with the relational database to execute operations.
+- **Industry Preference**: Rarely used in professional settings; typically replaced by 2-Tier and 3-Tier Architectures for better scalability and organization.
 
 ### Advantages of 1-Tier Architecture
 
@@ -18,12 +22,33 @@ Below mentioned are the advantages of 1-Tier Architecture.
 
 ## 2-Tier Architecture
 
-The 2-tier architecture is similar to a basic client-server model. The application at the client end directly communicates with the database on the server side. APIs like ODBC and JDBC are used for this interaction. The server side is responsible for providing query processing and transaction management functionalities. On the client side, the user interfaces and application programs are run. The application on the client side establishes a connection with the server side to communicate with the DBMS.
-An advantage of this type is that maintenance and understanding are easier, and compatible with existing systems. However, this model gives poor performance when there are a large number of users.
+- **Model**: Similar to a basic client-server architecture.
+- **Communication**: Client directly interacts with the database on the server.
+- **APIs**: Uses ODBC and JDBC for database interaction.
+- **Server Responsibilities**: Handles query processing and transaction management.
+- **Client Responsibilities**: Runs user interfaces and application programs.
+- **Connection**: Client establishes a connection to communicate with the DBMS.
+  
+### Advantages:
+- **Ease of Maintenance**: Simplified management and understanding of the system.
+- **Compatibility**: Works well with existing systems.
+
+### Disadvantages:
+- **Performance**: Poor scalability with a large number of users.
 
 ![alt text](image-3.png)
 
 ## 3-Tier Architecture
+
+1. **Intermediate Layer**: There is an additional layer between the client and server.
+2. **Client-Server Interaction**: The client does not directly communicate with the server; it communicates with the application server.
+3. **Application Server Role**: The application server handles communication with the database system.
+4. **Data Processing**: Query processing and transaction management occur after the application server interacts with the database.
+5. **Data Exchange**: The intermediate layer exchanges partially processed data between the client and server.
+6. **Use Case**: Commonly used in large web applications.
+
+
+![alt text](image-4.png)
 
 # 3-Tier Architecture in DBMS
 
@@ -41,7 +66,7 @@ An advantage of this type is that maintenance and understanding are easier, and 
 
 - **Conceptual Data Independence:** Changes in the conceptual schema should not affect the external schema, like adding or removing table attributes without altering user views. This is more challenging to achieve than physical data independence.
 
-## 3-Tier Schema Architecture
+## 3-Tier Architecture
 
 The 3-tier architecture in DBMS separates user interface, application processing, and data management into three distinct layers, enhancing scalability, flexibility, and security. Here’s a brief overview:
 
