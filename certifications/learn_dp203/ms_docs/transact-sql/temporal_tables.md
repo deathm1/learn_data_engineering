@@ -31,7 +31,7 @@ The current table contains the current value for each row. The history table con
 
 ![alt text](image-1.png)
 
-
+```
 CREATE TABLE dbo.Employee (
     [EmployeeID] INT NOT NULL PRIMARY KEY CLUSTERED,
     [Name] NVARCHAR(100) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE dbo.Employee (
     PERIOD FOR SYSTEM_TIME(ValidFrom, ValidTo)
 )
 WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.EmployeeHistory));
-
+```
 
 - Inserts: The system sets the value for the ValidFrom column to the begin time of the current transaction (in the UTC time zone) based on the system clock and assigns the value for the ValidTo column to the maximum value of 9999-12-31. This marks the row as open.
 
@@ -63,8 +63,30 @@ The SELECT ... FROM <table> statement has a new clause FOR SYSTEM_TIME, with fiv
 
 When you query using the FOR SYSTEM_TIME clause using one of the five subclauses, historical data from the temporal table are included, as shown in the following image.
 
-
+```
 SELECT * FROM Employee
     FOR SYSTEM_TIME
         BETWEEN '2021-01-01 00:00:00.0000000' AND '2022-01-01 00:00:00.0000000'
             WHERE EmployeeID = 1000 ORDER BY ValidFrom;
+```
+
+
+# How to Drop Temporal Tables ?
+
+1. Disable System Versioning:
+
+```
+ALTER TABLE [your_table_name] SET (SYSTEM_VERSIONING = OFF);
+```
+
+2. Drop the History Table (if applicable):
+
+```
+DROP TABLE [history_table_name];
+```
+
+3. Drop the Main Table:
+
+```
+DROP TABLE [your_table_name];
+```
